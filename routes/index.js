@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const { Configuration, OpenAIApi } = require("openai");
+require('dotenv').config();
+
 
 /* GET home page. */
 router.get('/api', async function(req, res, next) {
@@ -11,10 +13,12 @@ router.get('/api', async function(req, res, next) {
   }
 });
 
+const organizationKey = process.env.ORGANIZATION_KEY;
+const apiKey = process.env.API_KEY;
 
 const configuration = new Configuration({
-  organization: "", //insert your organization key
-  apiKey: "", //insert your OpenAI API key
+  organization: organizationKey,
+  apiKey: apiKey,
 });
 const openai = new OpenAIApi(configuration);
 

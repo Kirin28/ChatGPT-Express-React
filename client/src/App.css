@@ -28,12 +28,12 @@ body {
       
       .messages {
         flex: 1;
-        order: 1; /* Display messages on top */
+        order: 1;
         overflow-y: auto;
       }
       
       .input-form {
-        order: 2; /* Display form at the bottom */
+        order: 2; 
         padding: 10px;
         background-color: #f2f2f2;
       }
