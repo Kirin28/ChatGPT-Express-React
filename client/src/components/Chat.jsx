@@ -76,7 +76,7 @@ export default function Chat() {
           </p>
         </div>
 
-       
+        {error && <p style={{color: "red", fontSize: "85%"}}>{error}</p>}
        <div className='bottom-input'>
        <div className='divBorder'>
         <div className='input-container'>
