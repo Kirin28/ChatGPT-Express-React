@@ -60,10 +60,10 @@ export default function Chat() {
        <div className='container text-center py-3 my-2'>
     
         <h3 className='pb-4'>Start a conversation with the bot!</h3>
-        <div className='container'>
+        <div className='container divChat'>
           {chats && chats.length ? 
           chats.map((chat, index) => (
-            <p key={index} className='py-2 px-4 p-color d-flex justify-content-center col-lg-8 offset-lg-2'>
+            <p key={index} className='py-2 px-4 mb-2 p-color d-flex justify-content-center col-lg-8 offset-lg-2'>
                 {`${chat.role.toUpperCase()}: ${chat.content}`}
             </p>
           ))
@@ -75,15 +75,21 @@ export default function Chat() {
             <i>{isTyping ? "Typing..." : ""}</i>
           </p>
         </div>
-  
+
+       
        <div className='bottom-input'>
+       <div className='divBorder'>
         <div className='input-container'>
         <form className='pt-4' action="" onSubmit={(e) => handleChat(e, prompt)}>
           <input className='py-2 mb-2' id='myInput' type="text" name='prompt' 
           placeholder="Send a message..."
           value={prompt}
           onChange={(e) => setPrompts(e.target.value)} />
+          <button 
+          onSubmit={(e) => handleChat(e, prompt)}
+          className='py-2 mb-2 px-2 mx-1 sendBtn'><i className="fa-regular fa-paper-plane"></i></button>
         </form>
+        </div>
         </div>
         </div>
         </div>
